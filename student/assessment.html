@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAT BODYGUARDS - Evaluación: Técnicas de Protección</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        /* Assessment specific styles */
+        .assessment-container {
+            min-height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .assessment-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .assessment-timer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .assessment-content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .question-number {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-text {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .answer-option {
+            background-color: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .answer-option:hover {
+            border-color: var(--primary-blue);
+            background-color: rgba(30, 58, 138, 0.05);
+        }
+
+        .answer-option.selected {
+            border-color: var(--primary-blue);
+            background-color: rgba(30, 58, 138, 0.1);
+        }
+
+        .assessment-navigation {
+            background-color: white;
+            border-top: 1px solid var(--gray-200);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-bar-custom {
+            height: 6px;
+            background-color: var(--gray-200);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-gold));
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Assessment Container (Full Screen) -->
+    <div class="assessment-container">
+        <!-- Assessment Header -->
+        <div class="assessment-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="h4 mb-1">Evaluación: Técnicas de Protección</h1>
+                        <p class="mb-0 opacity-75">Curso de Seguridad Personal</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="assessment-timer" id="assessmentTimer">
+                            60:00
+                        </div>
+                        <div class="small opacity-75 mt-1">Tiempo restante</div>
+                    </div>
+                    <div class="col-md-3 text-end">
+                        <div class="question-indicator">
+                            Pregunta <span id="currentQuestion">1</span> de <span id="totalQuestions">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assessment Content -->
+        <div class="assessment-content">
+            <!-- Question 1 -->
+            <div class="question-container" id="question-1">
+                <div class="question-card">
+                    <div class="question-number">
+                        Pregunta 1 de 5
+                    </div>
+                    
+                    <div class="question-text">
+                        ¿Cuál es la primera medida que debe tomar un guardia de seguridad al identificar una amenaza potencial en el área de protección?
+                    </div>
+                    
+                    <!-- Multiple Choice Options -->
+                    <div class="answer-options">
+                        <div class="answer-option" data-value="a">
+                            <input type="radio" name="question1" value="a" id="q1a" style="margin-right: 1rem;">
+                            <label for="q1a" class="w-100" style="cursor: pointer;">
+                                <strong>A)</strong> Confrontar directamente a la persona sospechosa
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="b">
+                            <input type="radio" name="question1" value="b" id="q1b" style="margin-right: 1rem;">
+                            <label for="q1b" class="w-100" style="cursor: pointer;">
+                                <strong>B)</strong> Evaluar la situación y notificar a las autoridades correspondientes
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="c">
+                            <input type="radio" name="question1" value="c" id="q1c" style="margin-right: 1rem;">
+                            <label for="q1c" class="w-100" style="cursor: pointer;">
+                                <strong>C)</strong> Ignorar la situación hasta que se confirme el peligro
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="d">
+                            <input type="radio" name="question1" value="d" id="q1d" style="margin-right: 1rem;">
+                            <label for="q1d" class="w-100" style="cursor: pointer;">
+                                <strong>D)</strong> Evacuar inmediatamente el área sin evaluación previa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-container" id="question-2" style="display: none;">
+                <div class="question-card">
+                    <div class="question-number">
+                        Pregunta 2 de 5
+                    </div>
+                    
+                    <div class="question-text">
+                        Selecciona todas las técnicas de comunicación efectiva que debe utilizar un profesional de seguridad:
+                    </div>
+                    
+                    <div class="answer-options">
+                        <div class="answer-option" data-value="a">
+                            <input type="checkbox" name="question2" value="a" id="q2a" style="margin-right: 1rem;">
+                            <label for="q2a" class="w-100" style="cursor: pointer;">
+                                <strong>A)</strong> Mantener contacto visual apropiado
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="b">
+                            <input type="checkbox" name="question2" value="b" id="q2b" style="margin-right: 1rem;">
+                            <label for="q2b" class="w-100" style="cursor: pointer;">
+                                <strong>B)</strong> Usar un tono de voz calmado y profesional
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="c">
+                            <input type="checkbox" name="question2" value="c" id="q2c" style="margin-right: 1rem;">
+                            <label for="q2c" class="w-100" style="cursor: pointer;">
+                                <strong>C)</strong> Escuchar activamente las preocupaciones
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="d">
+                            <input type="checkbox" name="question2" value="d" id="q2d" style="margin-right: 1rem;">
+                            <label for="q2d" class="w-100" style="cursor: pointer;">
+                                <strong>D)</strong> Mostrar signos de agresividad para demostrar autoridad
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-container" id="question-3" style="display: none;">
+                <div class="question-card">
+                    <div class="question-number">
+                        Pregunta 3 de 5
+                    </div>
+                    
+                    <div class="question-text">
+                        Describe brevemente los pasos que seguirías para realizar una evaluación de riesgos en un evento público:
+                    </div>
+                    
+                    <div class="answer-options">
+                        <textarea class="form-control" rows="6" placeholder="Escribe tu respuesta aquí..." name="question3"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-container" id="question-4" style="display: none;">
+                <div class="question-card">
+                    <div class="question-number">
+                        Pregunta 4 de 5
+                    </div>
+                    
+                    <div class="question-text">
+                        ¿Es verdadero o falso que un guardia de seguridad debe siempre portar armas durante su servicio?
+                    </div>
+                    
+                    <div class="answer-options">
+                        <div class="answer-option" data-value="true">
+                            <input type="radio" name="question4" value="true" id="q4true" style="margin-right: 1rem;">
+                            <label for="q4true" class="w-100" style="cursor: pointer;">
+                                <strong>Verdadero</strong>
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="false">
+                            <input type="radio" name="question4" value="false" id="q4false" style="margin-right: 1rem;">
+                            <label for="q4false" class="w-100" style="cursor: pointer;">
+                                <strong>Falso</strong>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-container" id="question-5" style="display: none;">
+                <div class="question-card">
+                    <div class="question-number">
+                        Pregunta 5 de 5
+                    </div>
+                    
+                    <div class="question-text">
+                        ¿Cuál de las siguientes acciones es la más importante durante una situación de emergencia?
+                    </div>
+                    
+                    <div class="answer-options">
+                        <div class="answer-option" data-value="a">
+                            <input type="radio" name="question5" value="a" id="q5a" style="margin-right: 1rem;">
+                            <label for="q5a" class="w-100" style="cursor: pointer;">
+                                <strong>A)</strong> Mantener la calma y evaluar la situación
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="b">
+                            <input type="radio" name="question5" value="b" id="q5b" style="margin-right: 1rem;">
+                            <label for="q5b" class="w-100" style="cursor: pointer;">
+                                <strong>B)</strong> Actuar inmediatamente sin planificación
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="c">
+                            <input type="radio" name="question5" value="c" id="q5c" style="margin-right: 1rem;">
+                            <label for="q5c" class="w-100" style="cursor: pointer;">
+                                <strong>C)</strong> Esperar órdenes superiores antes de actuar
+                            </label>
+                        </div>
+                        
+                        <div class="answer-option" data-value="d">
+                            <input type="radio" name="question5" value="d" id="q5d" style="margin-right: 1rem;">
+                            <label for="q5d" class="w-100" style="cursor: pointer;">
+                                <strong>D)</strong> Abandonar el área inmediatamente
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assessment Navigation -->
+        <div class="assessment-navigation">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- Previous Button -->
+                <button class="btn btn-outline-secondary" id="prevQuestion" disabled>
+                    <i class="bi bi-chevron-left"></i> Anterior
+                </button>
+                
+                <!-- Progress Indicator -->
+                <div class="flex-grow-1 mx-4">
+                    <div class="progress-bar-custom">
+                        <div class="progress-fill" id="progressFill" style="width: 20%;"></div>
+                    </div>
+                    <div class="mt-2 text-center small text-muted">
+                        Progreso: <span id="progressPercentage">20%</span>
+                    </div>
+                </div>
+                
+                <!-- Next/Finish Button -->
+                <button class="btn btn-primary" id="nextQuestion">
+                    Siguiente <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <button class="btn btn-success" id="finishAssessment" style="display: none;">
+                    <i class="bi bi-check-circle"></i> Finalizar Evaluación
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let currentQuestionNum = 1;
+        const totalQuestionsNum = 5;
+        let timeRemaining = 60 * 60; // 60 minutes in seconds
+        
+        // Initialize assessment
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAssessment();
+            startTimer();
+        });
+        
+        function initializeAssessment() {
+            // Navigation event listeners
+            document.getElementById('prevQuestion').addEventListener('click', () => navigateQuestion('prev'));
+            document.getElementById('nextQuestion').addEventListener('click', () => navigateQuestion('next'));
+            document.getElementById('finishAssessment').addEventListener('click', finishAssessment);
+            
+            // Answer option click handlers
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    selectAnswer(this);
+                });
+            });
+            
+            updateNavigationButtons();
+            updateProgress();
+        }
+        
+        function navigateQuestion(direction) {
+            if (direction === 'next' && currentQuestionNum < totalQuestionsNum) {
+                currentQuestionNum++;
+            } else if (direction === 'prev' && currentQuestionNum > 1) {
+                currentQuestionNum--;
+            }
+            
+            updateQuestionDisplay();
+            updateProgress();
+            updateNavigationButtons();
+        }
+        
+        function updateQuestionDisplay() {
+            document.getElementById('currentQuestion').textContent = currentQuestionNum;
+            
+            // Hide all questions
+            document.querySelectorAll('.question-container').forEach(q => {
+                q.style.display = 'none';
+            });
+            
+            // Show current question
+            const currentQuestionEl = document.getElementById(`question-${currentQuestionNum}`);
+            if (currentQuestionEl) {
+                currentQuestionEl.style.display = 'block';
+            }
+        }
+        
+        function updateProgress() {
+            const progress = (currentQuestionNum / totalQuestionsNum) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+            document.getElementById('progressPercentage').textContent = `${Math.round(progress)}%`;
+        }
+        
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prevQuestion');
+            const nextBtn = document.getElementById('nextQuestion');
+            const finishBtn = document.getElementById('finishAssessment');
+            
+            prevBtn.disabled = currentQuestionNum === 1;
+            
+            if (currentQuestionNum === totalQuestionsNum) {
+                nextBtn.style.display = 'none';
+                finishBtn.style.display = 'inline-block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                finishBtn.style.display = 'none';
+            }
+        }
+        
+        function selectAnswer(element) {
+            const questionContainer = element.closest('.question-container');
+            const isCheckbox = element.querySelector('input[type="checkbox"]');
+            
+            if (isCheckbox) {
+                // Multiple selection - toggle
+                element.classList.toggle('selected');
+                const checkbox = element.querySelector('input[type="checkbox"]');
+                checkbox.checked = element.classList.contains('selected');
+            } else {
+                // Single selection - clear others and select this one
+                questionContainer.querySelectorAll('.answer-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                element.classList.add('selected');
+                const radio = element.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+            }
+        }
+        
+        function startTimer() {
+            function updateTimer() {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                
+                document.getElementById('assessmentTimer').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Change color when time is running low
+                const timerElement = document.getElementById('assessmentTimer');
+                if (timeRemaining <= 300) { // 5 minutes
+                    timerElement.style.color = '#ef4444';
+                } else if (timeRemaining <= 600) { // 10 minutes
+                    timerElement.style.color = '#f59e0b';
+                }
+                
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Tiempo agotado. La evaluación se enviará automáticamente.');
+                    finishAssessment();
+                    return;
+                }
+                
+                timeRemaining--;
+            }
+            
+            const timerInterval = setInterval(updateTimer, 1000);
+            updateTimer(); // Initial call
+        }
+        
+        function finishAssessment() {
+            if (confirm('¿Está seguro que desea finalizar la evaluación? No podrá realizar cambios después.')) {
+                const btn = document.getElementById('finishAssessment');
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando...';
+                
+                setTimeout(() => {
+                    alert('Evaluación enviada exitosamente. Redirigiendo al dashboard...');
+                    window.location.href = 'dashboard.html';
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
