@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAT BODYGUARDS - Dashboard Estudiante</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h4 class="navbar-brand text-white mb-0">SWAT BODYGUARDS</h4>
+        </div>
+        
+        <!-- User Profile Section -->
+        <div class="user-profile">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3e0c78d-5c5d-4a70-9155-4d2d78862152.png" alt="NombreDelUsuario" class="user-avatar">
+            <div class="user-name">NombreDelUsuario</div>
+            <div class="user-role">Estudiante</div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="dashboard.html">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courses.html">
+                        <i class="bi bi-book"></i> Mis Cursos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                        <i class="bi bi-person"></i> Perfil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">
+                        <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Mobile Header -->
+        <div class="d-md-none mb-3">
+            <button class="btn btn-primary" id="sidebarToggle">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="h3 fw-bold text-gray-900 mb-1">¡Hola, <span class="user-name-placeholder">NombreDelUsuario</span>!</h1>
+                <p class="text-muted">Bienvenido a tu plataforma de evaluaciones</p>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon bg-primary text-white">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Cursos Activos</div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon bg-success text-white">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Evaluaciones Completadas</div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon bg-warning text-white">
+                        <i class="bi bi-clock"></i>
+                    </div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Evaluaciones Pendientes</div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon bg-info text-white">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">Promedio General</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Mis Cursos</h5>
+                        <a href="courses.html" class="btn btn-outline-primary btn-sm">Ver Todos</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5724c03b-bb3c-4a88-99fd-38564022cc49.png" alt="Curso de Seguridad Personal" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Curso de Seguridad Personal</h5>
+                                        <div class="mb-3">
+                                            <span class="badge bg-primary">75% Completado</span>
+                                            <span class="badge bg-warning">2 Pendientes</span>
+                                        </div>
+                                        <div class="progress mb-3" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm w-100">Ir al Curso</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a0a08514-2f44-4a93-9f76-67f705d55236.png" alt="Protección Ejecutiva" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Protección Ejecutiva</h5>
+                                        <div class="mb-3">
+                                            <span class="badge bg-primary">45% Completado</span>
+                                            <span class="badge bg-warning">3 Pendientes</span>
+                                        </div>
+                                        <div class="progress mb-3" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"></div>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm w-100">Ir al Curso</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/972f273f-bb9c-471b-b380-ecc8e3e30c77.png" alt="Manejo de Crisis" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Manejo de Crisis</h5>
+                                        <div class="mb-3">
+                                            <span class="badge bg-success">90% Completado</span>
+                                            <span class="badge bg-warning">1 Pendiente</span>
+                                        </div>
+                                        <div class="progress mb-3" style="height: 8px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%"></div>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm w-100">Ir al Curso</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Assessments and Join Course -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Próximas Evaluaciones y Tareas</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-title">Evaluación Técnicas de Protección</h6>
+                                <p class="card-text text-muted small mb-2">Curso de Seguridad Personal</p>
+                                <p class="card-text">
+                                    <small class="text-muted">Vence: 15 de enero de 2024</small>
+                                </p>
+                                <button class="btn btn-outline-primary btn-sm">Ver Tarea</button>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-title">Examen Final Protección</h6>
+                                <p class="card-text text-muted small mb-2">Protección Ejecutiva</p>
+                                <p class="card-text">
+                                    <small class="text-muted">Vence: 18 de enero de 2024</small>
+                                </p>
+                                <button class="btn btn-outline-primary btn-sm">Ver Tarea</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Join Course Section -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Unirse a un Nuevo Curso</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="courseCode" class="form-label">Código del Curso</label>
+                            <input type="text" class="form-control" id="courseCode" placeholder="Ej: SWAT2024">
+                        </div>
+                        <button onclick="joinCourse()" class="btn btn-secondary w-100">
+                            Unirse al Curso
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+    
+    <script>
+        // Join Course Function
+        function joinCourse() {
+            const courseCode = document.getElementById('courseCode').value;
+            if (!courseCode) {
+                alert('Por favor, ingrese el código del curso');
+                return;
+            }
+            
+            alert('Te has unido al curso exitosamente');
+            document.getElementById('courseCode').value = '';
+        }
+    </script>
+</body>
+</html>
